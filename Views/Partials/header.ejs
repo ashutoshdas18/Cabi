@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Rental</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheet/main.css">
+    
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-dark" style="background-color: rgb(12, 10, 11); ">
+        <div class="container-fluid">
+             <div class="navbar-header">
+                 <a class="navbar-brand" href="/">Home</a>
+             </div>
+             <div class=" collapse navbar-collapse">
+                 <ul class=" nav navbar-nav navbar-right" >
+                   <% if(!currentUser){ %>
+                    <li><a href="/about">About</a></li>
+                     <li><a href="/login">Login</a></li>
+                     <li><a href="/register">Sign UP</a></li>
+                     
+                  <% }else{ %>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/allbookings">My bookings</a></li>
+                    <li><a href="#">Signed in as <%= currentUser.username %></a></li>
+                     <li><a href="/logout">Logout</a></li>
+                     
+                  <% } %>
+                 </ul>
+             </div>
+        </div>
+    </nav>
+    <script>
+        
+        if(location.search.split('=')[1]!=undefined)
+        {
+            console.log(location.search)
+            document.querySelector('.navbar-brand').innerHTML = "Cars at "+location.search.split('=')[1];
+        }
+        else{
+            document.querySelector('.navbar-brand').innerHTML = "Home"
+        }
+    </script>
+    </body>
+    
+    
+    

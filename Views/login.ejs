@@ -1,0 +1,55 @@
+<%- include('partials/header')%>
+
+
+
+<div class="container">
+    <style>
+        body{
+                background-color:rgb(221, 203, 203);
+                background-image: url(https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png);
+                background-size: cover;
+                /* background-image:url("//https:new-img.patrika.com/upload/2019/11/14/photo-1533468659570-9cc9354310e4_5361393_835x547-m.jpeg"); */
+                /* background-repeat: no-repeat;
+                background-size: auto; */
+              }
+              p{
+                  color: black;
+              }
+              .sign{
+                  color:white
+              }
+    </style>
+  <div class="row">
+    
+    <h1 style="text-align: center;">Log In </h1>
+   <div style="width:30%; margin: 0 auto">
+      <form action="/login" method="post">
+        <p><strong >Register Username</strong></p>
+          <div class="form-group">
+              <input  class="form-control" type="text" name="username"  placeholder="username">
+          </div>
+          <p><strong >Password</strong></p>
+          <div class="form-group">
+              <input  class="form-control" type="password" name="password"  placeholder="password">
+          </div>
+          
+          <div class="form-group">
+              <button class="btn btn-lg btn-primary btn-block">Log In</button>
+          </div>  
+       </form>
+       <p>
+           Dont have an account  <a href="/register" class="sign">Sign Up</a>
+       </p>
+      
+      <!-- <a href="/vehicles">Go Back</a> -->
+  </div>
+</div>
+
+<!-- <h1>Log in</h1>
+<form action="/login" method="post">
+    <input type="text" name="username" placeholder="username">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="Login">
+</form> -->
+
+<%- include('partials/footer')%>

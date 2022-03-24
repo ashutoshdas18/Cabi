@@ -1,0 +1,78 @@
+<%- include('partials/header')%>
+
+<style>
+        body{
+               background-image: url(https://www.coreldraw.com/static/cdgs/images/pages/seo/tips/photo/basics/blur-background/blur-background.jpg);
+               background-size: cover;
+        }
+        .go{
+                color: black;
+        }
+</style>
+
+
+<div class="container">       
+          <h1 style="text-align: center;">Rent the Car </h1>
+       <div style="width:50%; margin:30px 0px 0px 300px">
+
+            <form action="/vehicles/<%= vehicle %>/bookings" method="post">
+                <div class="row ">
+                <div class="col col-sm-6">
+                
+                 <div class="form-group">
+                        <h4><strong>Pickup Location</strong></h4>
+                        <input  class="form-control" type="text" name="pickup"  placeholder="Enter pickup Loacation" required>
+                </div>
+                <div class="form-group"> 
+                     <h4><strong>Pickup date</strong></h4>
+                     <input  class="form-control"  id="pickup" type="date" name="pickupdate"  placeholder="Enter Pickup Date">
+                </div>
+                <div class="form-group">
+                        <h4><strong>Pickup Time</strong></h4>
+                        <input  class="form-control"  type="time" name="pickuptime"  placeholder="Enter Pickup Time" required>   
+                </div>
+            </div>
+            <div class="col col-sm-6">
+                <div class="form-group">
+                        <h4><strong>Return Location</strong></h4>
+                        <input  class="form-control" type="text" name="return"  placeholder="Enter return Loacation" required>
+                </div>
+                <div class="form-group">
+                        <h4><strong>Return date</strong></h4>
+                        <input  class="form-control" id="return" type="date" name="returndate"  placeholder="Enter return Date" required>   
+                </div>
+                
+            </div>
+          </div>
+                <div style=" margin:0 auto">
+                        <button class="btn  btn-primary"type="submit">Confirm</button>
+                </div>
+             </form> 
+            
+             
+            <a href="/vehicles" class="go">Go Back</a>
+    </div> 
+</div>
+
+<script>
+        var date=new Date();
+        var tdate=date.getDate();
+        if(tdate<10){
+                tdate="0"+tdate;
+        }
+        var month=date.getMonth()+1;
+        if(month<10){
+               month="0"+month;
+        }
+        var year=date.getUTCFullYear();
+        var minDate=year+"-"+month+"-"+tdate;
+        var maxDate=year+"-"+month+"-"+(tdate+2);
+        document.getElementById("pickup").setAttribute('min',minDate)
+        document.getElementById("pickup").setAttribute('max',maxDate)
+
+        document.getElementById("return").setAttribute('min',minDate)
+        // document.getElementById("return").setAttribute('max',maxDate)
+
+
+        console.log(minDate);
+</script>

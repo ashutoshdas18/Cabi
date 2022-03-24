@@ -1,0 +1,35 @@
+<%- include('partials/header')%>
+
+<style>
+    body{
+            background-image: url(https://media.istockphoto.com/photos/round-podium-or-pedestal-with-blue-background-picture-id1226478932?b=1&k=20&m=1226478932&s=170667a&w=0&h=hXsvxQilNanpKx7QC_tIsFUOKPl8fdIDfJ_QSKXesGE=);
+            background-size: cover;
+        }
+    .row{
+        margin: 30px 0px 0px 350px;
+        color: white;
+    }
+    h1 {
+        padding: 40px;
+    }
+    .go{
+        color:black;
+    }
+</style>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <h1 class="book">My booking</h1>
+
+                <h4>Pickup Location : <%= booking.pickup %></h4>
+                <h4>return Location : <%= booking.return1 %></h4>
+                <h4>Pickup Date : <%= booking.pickupdate %></h4>
+                <h4>return Date : <%= booking.returndate %></h4>
+                <h4>Pickup Time : <%= booking.pickuptime %></h4>
+                <a href="/vehicles" class="go">Go back to all cars Page</a>
+
+    </div>
+</div>

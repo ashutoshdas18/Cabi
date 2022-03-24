@@ -1,0 +1,39 @@
+<%- include ('partials/header') %>
+
+<style>
+    body{
+        background-image: url(https://wallpaperaccess.com/full/51363.jpg);
+        background-size: cover;
+    }
+    #car{
+        background-color: rgba(255, 255, 255, 0.678);
+        height: 45em;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+         <div class="col-md-3" id="car">
+             <p class="lead">Cars</p>
+             <div class="list group">
+                 <h4><a><%= vehicle.name %></a></h4>
+                 <p><strong><%= vehicle.vehicleno %></strong></p>
+                 <p><%= vehicle.description %></p>
+             </div>
+         </div>
+         <div class="col-md-9">
+             <div class="thumbnail">
+                <img  class="img-responsive" src="<%= vehicle.image %>" >
+                <div class="caption-full">
+                    <h4 class="pull-right"><%= vehicle.price %>/Day</h4>
+                    
+                    
+                    
+                    <button class="btn btn-sucess btn-lg"><a href="/vehicles/<%= vehicle._id %>/booking">Booking</a></button>
+                </div>
+            </div>   
+         </div>
+    </div>
+</div>
+
+<%- include ('partials/footer') %>

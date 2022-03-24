@@ -1,0 +1,65 @@
+<%- include('partials/header')%>
+
+
+<style>
+    body{
+            background-color:rgb(221, 203, 203);
+            background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/598/528/small/blue4-01__Converted_-02-021.jpg);
+            background-size: cover; 
+        }
+    .go{
+           color:black ;
+        }
+
+</style>
+<div class="container">
+    <div class="row">
+          <h1 style="text-align: center;">Sign Up </h1>
+       <div style="width:30%; margin: 0 auto" >
+         <form action="/register" method="post">
+             <div class="form-group">
+                    <p><strong >Username</strong></p>  
+                    <input  class="form-control" type="text" name="username"  placeholder="username" required>
+                </div>
+                <p><strong >Password</strong></p>
+                <div class="form-group">
+                    <input  class="form-control" type="password" name="password"  placeholder="password" pattern=".{5,10}" requiredtitle="password must be between 5 and 10 character">
+                </div>
+                <p><strong >Gender</strong></p>
+                
+                <div class="form-group">
+                    <label for="gender" ></label>
+                    <select name="gender" style="width: 100%;height:2.6em">
+                        <option value="none" selected>Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">other</option>
+                    </select>
+                    <!-- <input  class="form-control" type="text" name="gender"  placeholder="Gender"> -->
+                </div>
+                <p><strong >Mobile no.</strong></p>
+                <div class="form-group">
+                    <input  class="form-control" type="text" name="mobileno"  placeholder="Enter your mobile no." pattern="[0-9]{10}"required>
+                </div>
+                <p><strong >DL No.</strong></p>
+                <div class="form-group">
+                    <input  class="form-control" type="text" name="DLno"  placeholder="Enter your DL no." required>
+                </div>
+                
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Sign Up</button>
+                </div>  
+            </form>
+            <a href="/" class="go">Go Back</a>
+       </div>
+
+<!-- <h1>Sign Up</h1>
+
+<form action="/register" method="post">
+    <input type="text" name="username" placeholder="username">
+    <input type="text" name="gender" placeholder="gender">
+    <input type="password" name="password" placeholder="password">
+    <button>Sign up</button>
+</form> -->
+
+<%- include('partials/footer')%>

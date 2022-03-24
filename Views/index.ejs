@@ -1,0 +1,44 @@
+<%- include('partials/header')%>
+
+
+<style>
+    body{
+        background-image: url(https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80);
+        background-size: cover;
+    }
+    .jumbotron{
+        background-color: rgba(245, 237, 237, 0.644);
+    }
+</style>
+
+<div class="container">
+  <header class="jumbotron">
+     <div class="container">
+       <h1>All Cars</h1>
+       <p>View our hand-picked Cars from all over the World</p>
+     
+    
+     </div>
+  </header>
+
+
+     <div class="row text-center"  style="display:flex; flex-wrap:wrap;">
+        <% vehicles.forEach(function(vehicle){   %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="<%= vehicle.image %>" >
+                    <div class="caption">
+                        <h4><%= vehicle.name %></h4>
+                    </div>
+                    <p>
+                        <a href="/vehicles/<%= vehicle._id %>" class="btn btn-primary">More Info</a>
+                    </p>
+                </div>             
+            </div>
+        <% }); %>
+     </div>
+
+
+
+</div>
+<%- include('partials/footer')%>

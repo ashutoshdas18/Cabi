@@ -1,0 +1,91 @@
+<%- include ('partials/header') %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<style>
+    .home{
+        background-image:url(https://images.caricos.com/a/audi/2021_audi_r8_green_hell/images/2560x1440/2021_audi_r8_green_hell_35_2560x1440.jpg) ;
+        background-size: cover;
+    }
+    .home h1{
+        color: white;
+          text-transform: uppercase;
+          margin-top:0%;
+          margin-left: 3%;
+    }
+    input{
+        width: 40%;
+        height: 3em;
+        margin-top: 35px;
+        margin-left: 30%;
+       
+    }
+    p{
+        margin-top:30%;
+        margin-left: 2%;
+        text-transform: uppercase;
+        color:aliceblue;
+        font-size: 1 em; 
+         
+    }
+#second{
+    margin-top:2%;
+
+}
+
+    
+
+</style>
+
+
+ 
+<section class="home">
+    <h1>Rent Our car at low price</h1>
+    <div>
+        <form action="/vehicles">
+            <input type="text" name="place" id="search" placeholder="Enter Desired Location">
+        </form>
+    </div>
+    <p>
+        My car rental system serves people who don't own a vehicle or require extra conveyance for travels etc, who are out of town or tourists or owners of damaged vehicle who are awaiting repair or insurance​ ​compensation.We provide safe and sanitize car.
+    </p>
+    
+</section>
+<section id="second">
+    <div class="container">
+        <div class="row"> 
+            <div class="col col-md-4">
+                <h3>Car for Rent</h3>
+                <div>
+                     <strong>Mycar rental system serves people who don't own a vehicle or require extra conveyance for travels etc, who are out of town or tourists or owners of damaged vehicle who are awaiting repair or insurance​ ​compensation.</strong>
+                </div>
+            </div>
+            <div class="col col-md-4">
+               
+            </div>
+            <div class="col col-md-4">
+                <h3>For Admin Login</h3>
+                <button class="btn btn-lg btn-sucess">
+                    <a href="/adminlogin" class="admin">Admin login</a>  
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+    
+    
+
+<%- include ('partials/footer') %>
+
+
+<script>
+    document.querySelector('form').addEventListener('submit',e=>{
+        if(document.querySelector('#search').value==="")
+        {   e.preventDefault();
+            prompt("Enter a valid place")
+        }
+    })
+</script>

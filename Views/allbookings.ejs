@@ -1,0 +1,69 @@
+<%- include('partials/header')%>
+
+
+
+<h1>My bookings</h1>
+<style>
+    body{
+        background-image: url(https://extension.ucsd.edu/UCSDExtension/media/UCSDExtensionsMedia/news-and-events/extension-blog/SDT_Zoom-Backgrounds_April-8_Cabrillo-Road-SD-3.jpg);
+        background-size: cover;
+    }
+    h1{
+        text-align: center;
+        padding: 2%;
+    }
+    table{
+        width: 100%;
+        border: 1px solid black;
+        background-color: rgba(255, 255, 255, 0.541);
+    }
+    th{
+        height: 70px;
+        text-align: center;
+    }
+    td{
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+
+<div class="container">
+    <% if(booking!=null) { %>
+        <table border="2">
+        <tr>
+            <th>Pickup Location</th>
+            <th>Return Location</th>
+            <th>Pickup Date</th>
+            <th>Return Date</th>
+            <th>Pickup Time</th>
+            <th>Cancel Car</th>
+    
+            
+        </tr>
+        <% booking.forEach(function(item){ %>
+        <tr>
+            <td><%= item.pickup%></td>
+            <td><%= item.return1 %></td>
+            <td><%= item.pickupdate %></td>
+            <td><%= item.returndate %></td>
+            <td><%= item.pickuptime %></td>
+            <td><form action="/cancel/<%= item.vehicleId %>" method="post">
+                <button type="submit">Cancel</button>
+            </form></td>
+        </tr>
+        <% }) %>
+        </table>
+        <% } %>
+      
+</div>
+<script>
+    document.querySelector('form').addEventListener('submit',e=>{
+        e.preventDefault();
+        document.querySelectorAll('tr')[0].remove();
+        document.querySelector('form').submit(); 
+        alert("Want to Cancel")
+    })
+</script>
+
+
+
